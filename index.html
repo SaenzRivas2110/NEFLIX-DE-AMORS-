@@ -3538,6 +3538,115 @@ body[data-view="home"] .hero::before{background:linear-gradient(90deg,rgba(2,5,2
 .nav-links li a{white-space:nowrap}
 @media(max-width:1500px){.nav-links{display:none!important}#lvBurger{display:flex!important}}
 </style>
+
+<style id="loveflix-2-0-experience-css">
+/* Capa 3D adicional: conserva intactos los fondos y las imágenes originales. */
+.lfx-experience-room{
+  position:relative;isolation:isolate;overflow:hidden;margin:clamp(36px,6vw,86px) 4%;
+  padding:clamp(28px,5vw,64px);border:1px solid rgba(190,145,255,.22);
+  border-radius:30px;background:linear-gradient(135deg,rgba(12,12,38,.76),rgba(25,10,45,.68));
+  box-shadow:0 28px 90px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.09);
+  perspective:1200px;transform-style:preserve-3d
+}
+.lfx-room-orbit{position:absolute;z-index:-1;width:380px;height:380px;border:1px solid rgba(174,126,255,.18);border-radius:50%;pointer-events:none;filter:drop-shadow(0 0 22px rgba(157,92,255,.18))}
+.lfx-room-orbit:before,.lfx-room-orbit:after{content:"";position:absolute;border:1px solid rgba(174,126,255,.13);border-radius:50%;inset:32px}
+.lfx-room-orbit:after{inset:76px}
+.lfx-room-orbit-a{right:-180px;top:-190px;transform:rotateX(67deg) rotateZ(-22deg);animation:lfxOrbitFloat 15s ease-in-out infinite}
+.lfx-room-orbit-b{left:-240px;bottom:-270px;transform:rotateX(68deg) rotateZ(30deg);animation:lfxOrbitFloat 19s ease-in-out infinite reverse}
+@keyframes lfxOrbitFloat{0%,100%{translate:0 0}50%{translate:0 22px}}
+.lfx-room-heading{position:relative;max-width:760px;margin:0 auto 30px;text-align:center}
+.lfx-room-kicker{display:inline-block;color:#d6b5ff;font-size:.7rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.lfx-room-heading h2{margin:10px 0 9px;color:#fff;font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;text-shadow:0 3px 0 rgba(78,37,130,.8),0 12px 34px rgba(157,92,255,.32);transform:translateZ(35px)}
+.lfx-room-heading p{color:rgba(239,230,255,.78);font-size:.96rem}
+.lfx-room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;position:relative;perspective:1000px}
+.lfx-room-card{--room-hue:280;min-height:205px;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px;overflow:hidden;padding:22px;border:1px solid hsla(var(--room-hue),90%,78%,.22);border-radius:21px;color:#fff;text-decoration:none;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025) 48%,hsla(var(--room-hue),70%,30%,.16));box-shadow:0 15px 34px rgba(0,0,0,.23),inset 0 1px rgba(255,255,255,.11);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s;will-change:transform}
+.lfx-room-card:before{content:"";position:absolute;width:190px;height:190px;right:-90px;top:-100px;border-radius:50%;background:hsla(var(--room-hue),95%,65%,.17);filter:blur(8px);transition:transform .6s}
+.lfx-room-card:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.10) 45%,transparent 65%);transform:translateX(-130%);transition:transform .8s}
+.lfx-room-card:hover{transform:translateY(-9px) rotateX(4deg) rotateY(-3deg) translateZ(14px);border-color:hsla(var(--room-hue),100%,82%,.62);box-shadow:0 26px 55px rgba(0,0,0,.35),0 0 28px hsla(var(--room-hue),90%,60%,.14),inset 0 1px rgba(255,255,255,.2)}
+.lfx-room-card:hover:before{transform:scale(1.55)}
+.lfx-room-card:hover:after{transform:translateX(130%)}
+.lfx-room-icon{font-size:2rem;filter:drop-shadow(0 5px 12px rgba(196,145,255,.35));transform:translateZ(28px)}
+.lfx-room-number{font-size:.62rem;letter-spacing:.17em;color:#d9c5ff;font-weight:800;transform:translateZ(18px)}
+.lfx-room-card strong{font-size:1.13rem;transform:translateZ(24px)}
+.lfx-room-card small{font-size:.79rem;line-height:1.5;color:rgba(242,235,255,.72);max-width:250px;transform:translateZ(15px)}
+.lfx-room-card i{font-style:normal;font-size:.75rem;color:#e1c9ff;margin-top:5px;transform:translateZ(20px)}
+.lfx-room-console{position:relative;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:22px;margin-top:22px;padding:18px 20px;border:1px solid rgba(196,160,255,.2);border-radius:18px;background:rgba(5,5,20,.55);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.lfx-console-copy{display:grid;gap:4px}.lfx-console-copy strong{font-size:1rem;color:#fff}.lfx-console-copy small{font-size:.76rem;color:rgba(236,225,255,.65)}
+.lfx-equalizer{height:40px;display:flex;align-items:center;gap:4px}
+.lfx-equalizer span{display:block;width:4px;height:8px;border-radius:8px;background:linear-gradient(#e6caff,#9654ec);opacity:.65}
+.lfx-equalizer.is-playing span{animation:lfxEqualize .72s ease-in-out infinite alternate}
+.lfx-equalizer span:nth-child(3n){animation-delay:-.35s}.lfx-equalizer span:nth-child(4n){animation-delay:-.52s}.lfx-equalizer span:nth-child(2n){animation-delay:-.18s}
+@keyframes lfxEqualize{from{height:5px;opacity:.55}to{height:35px;opacity:1}}
+.lfx-player-controls{display:flex;align-items:center;gap:10px}
+.lfx-player-controls button,.lfx-room-shortcuts button{border:1px solid rgba(207,173,255,.28);border-radius:999px;background:linear-gradient(135deg,#9d5cff,#6330a7);color:#fff;padding:10px 15px;font-weight:800;cursor:pointer;box-shadow:0 7px 22px rgba(116,62,190,.25);transition:transform .25s,filter .25s}
+.lfx-player-controls button:hover,.lfx-room-shortcuts button:hover{transform:translateY(-2px);filter:brightness(1.15)}
+#lfxMusicState{font-size:.72rem;color:rgba(240,230,255,.75);white-space:nowrap}
+.lfx-room-shortcuts{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:17px}
+.lfx-room-shortcuts button{background:rgba(255,255,255,.07);box-shadow:none;font-size:.75rem}
+@media(max-width:800px){.lfx-room-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lfx-room-console{grid-template-columns:1fr auto}.lfx-equalizer{display:none}}
+@media(max-width:520px){.lfx-experience-room{margin:30px 12px;padding:23px 15px;border-radius:23px}.lfx-room-grid{gap:10px}.lfx-room-card{min-height:178px;padding:15px;border-radius:17px}.lfx-room-card strong{font-size:.98rem}.lfx-room-card small{font-size:.72rem}.lfx-room-console{grid-template-columns:1fr;gap:12px}.lfx-player-controls{justify-content:space-between}.lfx-room-shortcuts button{padding:9px 12px}}
+@media(hover:none){.lfx-room-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.lfx-room-orbit,.lfx-equalizer span{animation:none!important}.lfx-room-card,.lfx-room-card:after,.lfx-room-card:before{transition:none!important}}
+/* Refuerzo de profundidad para elementos que ya existían; no reemplaza sus animaciones. */
+.hero-content,.hero-title,.hero-badge,.section-title,.vc-heading,.carta-mini-intro{transform-style:preserve-3d}
+.hero-title{text-shadow:0 2px 0 rgba(79,40,132,.65),0 8px 28px rgba(157,92,255,.22)}
+.profile-avatar,.profile,.collage-item,.vc-slide,.universe-card,.game-card,.lv-tile{backface-visibility:hidden}
+.navbar,.navbar.scrolled{border-bottom:1px solid rgba(190,150,255,.10);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+</style>
+
+
+<style id="lfx-lia-cinematic-css">
+/* Complemento visual: no modifica ni reemplaza el fondo original del sitio. */
+.lfx-lia-upgrade,.lfx-secret-extra{position:relative;isolation:isolate;margin:48px 4%;padding:clamp(24px,4vw,48px);border:1px solid rgba(203,169,255,.22);border-radius:28px;background:linear-gradient(120deg,rgba(16,12,39,.78),rgba(38,17,58,.62));box-shadow:0 22px 65px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.1);overflow:hidden}
+.lfx-lia-upgrade{display:flex;align-items:center;gap:clamp(20px,5vw,56px);min-height:260px}
+.lfx-lia-orb{flex:0 0 clamp(100px,17vw,175px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff2ff 0 3%,#d7aaff 8%,#9c55ee 28%,#3c176d 58%,rgba(20,8,40,.25) 72%);box-shadow:0 0 35px #a65bdf88,0 0 90px #7c3aed44,inset -12px -15px 28px #170727;animation:lfxLiaFloat 4s ease-in-out infinite}
+.lfx-lia-orb span{font-size:clamp(38px,7vw,72px);color:white;text-shadow:0 0 20px #fff,0 0 38px #d8a8ff;animation:lfxLiaSpark 3s ease-in-out infinite}
+@keyframes lfxLiaFloat{50%{transform:translateY(-9px) scale(1.025)}}
+@keyframes lfxLiaSpark{50%{transform:rotate(35deg) scale(1.12)}}
+.lfx-lia-copy{max-width:650px}.lfx-lia-copy>small,.lfx-secret-heading>small{letter-spacing:.2em;font-weight:800;font-size:.68rem;color:#d9b7ff}
+.lfx-lia-copy h2,.lfx-secret-heading h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:9px 0;color:#fff;text-shadow:0 4px 24px #a855f766}
+.lfx-lia-copy p,.lfx-secret-heading p{color:rgba(246,237,255,.76);line-height:1.65}
+#lfxLaunchLia{margin-top:12px;border:1px solid #e3caff66;border-radius:999px;padding:12px 21px;color:#fff;background:linear-gradient(120deg,#9b55e8,#5b2c9e);font-weight:800;cursor:pointer;box-shadow:0 9px 28px #783cc455;transition:transform .25s,filter .25s}
+#lfxLaunchLia:hover{transform:translateY(-3px);filter:brightness(1.15)}
+.lfx-lia-copy em{display:block;margin-top:10px;font-size:.72rem;color:#d9c7e9;font-style:normal}
+.lfx-secret-heading{text-align:center;margin-bottom:25px}
+.lfx-secret-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lfx-secret-card{min-height:205px;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:10px;padding:22px;border:1px solid #d7b5ff33;border-radius:20px;color:#fff;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(28,12,48,.42));box-shadow:0 15px 35px #0004;cursor:pointer;transform-style:preserve-3d;transition:transform .45s,border-color .3s,box-shadow .3s}
+.lfx-secret-card:hover{transform:perspective(800px) rotateX(5deg) translateY(-8px);border-color:#d7b5ff99;box-shadow:0 25px 45px #0005,0 0 25px #a855f733}
+.lfx-secret-card span{font-size:2rem}.lfx-secret-card small{font-size:.65rem;letter-spacing:.17em;color:#d8b7ff}.lfx-secret-card b{font-size:1.08rem}.lfx-secret-card i{font-size:.75rem;color:#e4cfff;font-style:normal}
+.lfx-letter-modal[hidden]{display:none}.lfx-letter-modal{position:fixed;inset:0;z-index:99990;display:grid;place-items:center;padding:20px}
+.lfx-letter-backdrop{position:absolute;inset:0;background:rgba(5,3,16,.82);backdrop-filter:blur(12px);animation:lfxFadeIn .35s both}
+.lfx-letter-paper{position:relative;z-index:1;width:min(620px,100%);max-height:82vh;overflow:auto;padding:clamp(25px,5vw,48px);border:1px solid #d7b5ff77;border-radius:20px;color:#39264a;background:linear-gradient(145deg,#fffdf9,#f5e9ff);box-shadow:0 30px 100px #0009;animation:lfxLetterOpen .65s cubic-bezier(.16,1,.3,1) both}
+.lfx-letter-paper>span{font-size:.65rem;letter-spacing:.2em;color:#8753aa}.lfx-letter-paper h3{font:700 clamp(1.6rem,4vw,2.3rem) Georgia,serif;margin:15px 0;color:#633b7d}.lfx-letter-paper #lfxLetterBody{font:1rem/1.85 Georgia,serif;white-space:pre-line}.lfx-letter-paper>strong{display:block;margin-top:25px;color:#74438c}
+.lfx-letter-close{position:absolute;right:14px;top:10px;border:0;background:transparent;color:#67417a;font-size:2rem;cursor:pointer}
+@keyframes lfxLetterOpen{from{opacity:0;transform:translateY(35px) rotateX(12deg) scale(.92)}to{opacity:1;transform:none}}
+@keyframes lfxFadeIn{from{opacity:0}to{opacity:1}}
+.lfx-cinema-transition{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(66,30,100,.96),rgba(5,4,18,.99) 70%);clip-path:inset(50% 0);transition:clip-path .48s cubic-bezier(.7,0,.2,1),opacity .25s}
+.lfx-cinema-transition.is-active{opacity:1;clip-path:inset(0)}
+.lfx-cinema-mark{font:800 clamp(1.5rem,5vw,3.2rem)/1 Georgia,serif;letter-spacing:.18em;color:#fff;text-shadow:0 0 28px #c084fc;transform:scale(.92);transition:transform .5s}
+.lfx-cinema-transition.is-active .lfx-cinema-mark{transform:scale(1)}
+.lfx-cinema-mark span{color:#d8b4fe}
+@media(max-width:650px){.lfx-lia-upgrade{flex-direction:column;text-align:center}.lfx-secret-grid{grid-template-columns:1fr}.lfx-secret-card{min-height:155px}.lfx-lia-orb{flex-basis:112px;width:112px}}
+@media(prefers-reduced-motion:reduce){.lfx-lia-orb,.lfx-lia-orb span{animation:none!important}.lfx-secret-card,#lfxLaunchLia{transition:none!important}.lfx-cinema-transition{display:none}}
+</style>
+
+
+<style id="lfx-lia-panel-persistence-fix">
+/* Mantener el panel de conversación accesible y por encima de las secciones. */
+#aura-panel.open { display:flex !important; visibility:visible !important; opacity:1 !important; pointer-events:auto !important; }
+#aura-panel { pointer-events:auto; }
+#lfxLaunchLia { position:relative; z-index:2; touch-action:manipulation; }
+@media (max-width:600px) {
+  #aura-panel.open { max-height:calc(100dvh - 190px - env(safe-area-inset-bottom, 0px)) !important; overflow:auto !important; }
+}
+</style>
+
+
+<style id="loveflix-no-ai">
+/* Se retira la interfaz del asistente IA; se conservan las demás experiencias. */
+#auraFab, #aura-panel, #ua-trans, #uaFab, #uvFab { display:none !important; }
+</style>
+
 </head>
 <body>
 <div id="intro-animation" aria-hidden="true">
@@ -4050,6 +4159,9 @@ Eres mi persona favorita en este universo. Te elijo hoy, mañana y siempre.
         <div class="lfx-lb" id="lfxLB" hidden><div class="lfx-paper" id="lfxPaper" role="dialog" aria-modal="true"><button id="lfxLBx" type="button" aria-label="Cerrar">×</button><small id="lfxKind"></small><h3 id="lfxLT"></h3><div id="lfxLP"></div><div class="lfx-sign">Teisi</div></div></div>
         <div class="lfx-toast" id="lfxToast" role="status"></div>
 
+
+<div class="lfx-cinema-transition" id="lfxCinemaTransition" aria-hidden="true"><div class="lfx-cinema-mark">LOVEFLIX <span>✦</span></div></div>
+
 <!-- UNIVERSO INTERACTIVO -->
 <section class="universe-section" id="universo">
     <div class="universe-header">
@@ -4076,7 +4188,64 @@ Eres mi persona favorita en este universo. Te elijo hoy, mañana y siempre.
 
         
 
-        <!-- FOOTER -->
+        
+<!-- LOVEFLIX 2.0 · SALA DE EXPERIENCIAS 3D (añadido sin sustituir el fondo original) -->
+<section id="lfx-experience-room" class="lfx-experience-room" aria-label="Sala de experiencias LOVEFLIX">
+  <div class="lfx-room-orbit lfx-room-orbit-a" aria-hidden="true"></div>
+  <div class="lfx-room-orbit lfx-room-orbit-b" aria-hidden="true"></div>
+  <div class="lfx-room-heading">
+    <span class="lfx-room-kicker">LOVEFLIX · EXPERIENCIA INMERSIVA</span>
+    <h2>Un universo de recuerdos</h2>
+    <p>Explora cada rincón de nuestra historia. Toca una experiencia para entrar.</p>
+  </div>
+  <div class="lfx-room-grid">
+    <a class="lfx-room-card" href="#collage" style="--room-hue:285">
+      <span class="lfx-room-icon">📸</span><span class="lfx-room-number">01 · RECUERDOS</span>
+      <strong>Galería de momentos</strong><small>Fotografías, recuerdos y momentos especiales.</small><i>Explorar ↗</i>
+    </a>
+    <a class="lfx-room-card" href="#cartas" style="--room-hue:320">
+      <span class="lfx-room-icon">💌</span><span class="lfx-room-number">02 · CARTAS</span>
+      <strong>Cartas para ti</strong><small>Abre el sobre y descubre lo que quiero decirte.</small><i>Leer ↗</i>
+    </a>
+    <a class="lfx-room-card" href="#universo" style="--room-hue:205">
+      <span class="lfx-room-icon">🪐</span><span class="lfx-room-number">03 · UNIVERSO</span>
+      <strong>Nuestro universo</strong><small>Acércate a Saturno y descubre sus secretos.</small><i>Viajar ↗</i>
+    </a>
+    <a class="lfx-room-card" href="#universo-amor" style="--room-hue:260">
+      <span class="lfx-room-icon">✨</span><span class="lfx-room-number">04 · ESCENARIO</span>
+      <strong>Universo de tu amor</strong><small>Luces, música y una experiencia inmersiva.</small><i>Entrar ↗</i>
+    </a>
+    <a class="lfx-room-card" href="#secretos" style="--room-hue:35">
+      <span class="lfx-room-icon">🔐</span><span class="lfx-room-number">05 · SORPRESAS</span>
+      <strong>Mensajes secretos</strong><small>Desbloquea poemas y pequeñas sorpresas.</small><i>Descubrir ↗</i>
+    </a>
+    <a class="lfx-room-card" href="#juego" style="--room-hue:340">
+      <span class="lfx-room-icon">🎮</span><span class="lfx-room-number">06 · AVENTURA</span>
+      <strong>Juega conmigo</strong><small>Desafíos y aventuras hechos para ti.</small><i>Jugar ↗</i>
+    </a>
+  </div>
+  <div class="lfx-room-console">
+    <div class="lfx-console-copy">
+      <span class="lfx-room-kicker">LOVEFLIX SOUND</span>
+      <strong>Tu banda sonora</strong>
+      <small>Controla la música principal sin salir de esta página.</small>
+    </div>
+    <div class="lfx-equalizer" id="lfxEqualizer" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="lfx-player-controls">
+      <button type="button" id="lfxMusicToggle" aria-label="Reproducir o pausar música">▶</button>
+      <span id="lfxMusicState" role="status">Música en espera</span>
+    </div>
+  </div>
+  <div class="lfx-room-shortcuts">
+    <button type="button" id="lfxOpenAssistant">✦ Abrir asistente de voz</button>
+    <button type="button" id="lfxOpenChat">♡ Abrir chat privado</button>
+    <button type="button" id="lfxBackTop">↑ Volver arriba</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
         <section id="universo-amor">
 <div id="uv-page" role="dialog" aria-label="Universo de tu Amor">
   <nav class="uv-bar" id="uv-bar">
@@ -4115,6 +4284,136 @@ Eres mi persona favorita en este universo. Te elijo hoy, mañana y siempre.
 <p>Gracias por tu paciencia, por tu risa y por elegirme. Yo te elijo hoy, mañana y siempre.</p>
 <p class="lv-sign">Con todo mi cariño, Teisi</p>
 </article></section>
+
+<!-- LOVEFLIX · Extras interactivos (7, 9, 14, 17, 19, 20, 22, 24) -->
+<section id="love-extras" aria-label="Experiencias románticas extra">
+<style>
+#love-extras{padding:42px 4% 70px;position:relative;isolation:isolate}
+#love-extras:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 10%,rgba(157,92,255,.17),transparent 50%),radial-gradient(ellipse at 90% 90%,rgba(255,93,154,.1),transparent 45%);pointer-events:none;z-index:-1}
+#love-extras .lx-head{text-align:center;margin:0 auto 30px;max-width:800px}
+#love-extras .lx-head small{color:#d8b4fe;letter-spacing:.2em;font-weight:800}
+#love-extras .lx-head h2{font-size:clamp(28px,4vw,44px);margin:10px 0;color:#f6d8a8;font-family:'Fraunces',serif}
+#love-extras .lx-head p{color:#c8bfd7}
+#love-extras .lx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1100px;margin:auto}
+#love-extras .lx-card{background:linear-gradient(135deg,rgba(33,18,50,.68),rgba(16,10,27,.72));border:1px solid rgba(216,180,254,.26);box-shadow:0 18px 55px rgba(0,0,0,.23),inset 0 1px rgba(255,255,255,.06);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:22px;padding:22px;overflow:hidden;position:relative}
+#love-extras .lx-card h3{font-family:'Fraunces',serif;color:#f6d8a8;font-size:22px;margin:0 0 8px}
+#love-extras .lx-card p{color:#cfc5df;margin:0 0 14px}
+#love-extras .lx-btn{border:1px solid rgba(216,180,254,.5);border-radius:999px;padding:10px 17px;background:linear-gradient(135deg,#9850df,#6427a8);color:#fff;font-weight:700;cursor:pointer;transition:transform .2s,filter .2s}
+#love-extras .lx-btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
+#love-extras .lx-btn:active{transform:scale(.97)}
+#lx-hug{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;min-height:110px}
+#lx-heart{font-size:60px;display:inline-block;filter:drop-shadow(0 0 12px #ff5b9d);transition:transform .3s}
+#lx-heart.bounce{animation:lxBeat .7s ease 2}
+@keyframes lxBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.25)}50%{transform:scale(.95)}75%{transform:scale(1.16)}}
+#lx-scratch-wrap{position:relative;height:170px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);touch-action:none;background:linear-gradient(130deg,#3b1d61,#9d5cff,#45205f);display:grid;place-items:center}
+#lx-scratch-message{padding:15px;text-align:center;color:#ffe5ae;font-weight:800;font-size:21px}
+#lx-scratch-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+#lx-kiss-count{font-size:clamp(44px,7vw,70px);font-weight:900;color:#ff8bbd;text-align:center;text-shadow:0 0 25px #a8326d;line-height:1.2}
+#lx-surprise{min-height:86px;border:1px dashed rgba(216,180,254,.35);border-radius:15px;padding:20px;text-align:center;color:#f6d8a8;background:rgba(255,255,255,.035);font-size:17px}
+#lx-movie-box{min-height:160px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;background:radial-gradient(circle at center,#47266c,#160d24 72%);border:1px solid rgba(216,180,254,.2);padding:24px}
+#lx-movie-scene{font-family:'Fraunces',serif;color:#ffe0a6;font-size:clamp(21px,3vw,30px);opacity:1;transition:opacity .35s,transform .35s}
+#lx-movie-scene.fade{opacity:0;transform:translateY(10px)}
+#lx-vinyl-wrap{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:12px}
+#lx-vinyl{width:142px;height:142px;border-radius:50%;background:repeating-radial-gradient(circle,#17131b 0 2px,#25212b 3px 4px,#0d0b11 5px 7px);border:5px solid #27212f;box-shadow:0 0 30px rgba(160,91,255,.23);display:grid;place-items:center;position:relative}
+#lx-vinyl:after{content:"LOVE\\A FLIX";white-space:pre;text-align:center;font-size:10px;font-weight:900;letter-spacing:2px;color:#ffe0a6;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#9d5cff,#5c2a91 70%);border:2px solid #d8b4fe}
+#lx-vinyl.playing{animation:lxSpin 3s linear infinite}
+@keyframes lxSpin{to{transform:rotate(360deg)}}
+#love-extras .lx-footnote{font-size:12px;opacity:.7;margin-top:10px}
+@media(max-width:700px){#love-extras .lx-grid{grid-template-columns:1fr}#love-extras .lx-card{padding:18px}#lx-vinyl{width:120px;height:120px}}
+</style>
+<div class="lx-head">
+ <small>UN UNIVERSO DE RECUERDOS</small>
+ <h2>Pequeñas cosas, solo para ti ❤️</h2>
+ <p>Ocho experiencias nuevas escondidas en LOVEFLIX.</p>
+</div>
+<div class="lx-grid">
+ <article class="lx-card">
+  <h3>7 · Cristal mágico</h3><p>Tarjetas con brillo, transparencia y reflejos de cristal.</p>
+  <div style="padding:20px;border-radius:15px;background:linear-gradient(135deg,rgba(160,90,255,.18),rgba(255,170,215,.08));border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);text-align:center;color:#ffe5b7">✨ Un lugar que guarda nuestros recuerdos ✨</div>
+ </article>
+ <article class="lx-card">
+  <h3>9 · Estela de estrellas</h3><p>Mueve el cursor y deja una pequeña estela luminosa.</p>
+  <div style="height:55px;display:grid;place-items:center;color:#d8b4fe">✦ Mueve tu cursor por la página ✦</div>
+ </article>
+ <article class="lx-card">
+  <h3>14 · Un abrazo a distancia</h3><p>Presiona el botón para enviar un abrazo virtual.</p>
+  <div id="lx-hug"><span id="lx-heart" aria-hidden="true">❤️</span><button class="lx-btn" id="lx-hug-btn">Mandarte un abrazo</button></div>
+  <div class="lx-footnote" id="lx-hug-text" aria-live="polite">Un abrazo guardado aquí, para cuando lo necesites.</div>
+ </article>
+ <article class="lx-card">
+  <h3>17 · Rasca y descubre</h3><p>Raspa la superficie con el mouse o tu dedo para descubrir el mensaje.</p>
+  <div id="lx-scratch-wrap"><div id="lx-scratch-message">Eres mi lugar favorito. ❤️</div><canvas id="lx-scratch-canvas"></canvas></div>
+  <button class="lx-btn" id="lx-scratch-reset" style="margin-top:12px">Volver a cubrir</button>
+ </article>
+ <article class="lx-card">
+  <h3>19 · Contador de besos</h3><p>Un contador simbólico para llenar esta página de besitos.</p>
+  <div id="lx-kiss-count">💋 0</div><div style="text-align:center;margin-top:12px"><button class="lx-btn" id="lx-kiss-btn">Enviar un beso 💋</button> <button class="lx-btn" id="lx-kiss-reset" style="background:#352344">Reiniciar</button></div>
+ </article>
+ <article class="lx-card">
+  <h3>20 · Sorpresa del día</h3><p>Una dedicatoria distinta según el día. Vuelve mañana para descubrir otra.</p>
+  <div id="lx-surprise" aria-live="polite"></div>
+ </article>
+ <article class="lx-card">
+  <h3>22 · Nuestra película</h3><p>Un pequeño recorrido cinematográfico por esta historia de amor.</p>
+  <div id="lx-movie-box"><div id="lx-movie-scene">Todo comenzó con una historia…<br>y todavía estamos escribiendo lo más bonito.</div></div>
+  <div style="text-align:center;margin-top:13px"><button class="lx-btn" id="lx-movie-next">Siguiente escena ▶</button></div>
+ </article>
+ <article class="lx-card">
+  <h3>24 · Nuestro vinilo</h3><p>Un disco que gira como si estuviera sonando nuestra canción.</p>
+  <div id="lx-vinyl-wrap"><div id="lx-vinyl" aria-label="Disco de vinilo"></div><button class="lx-btn" id="lx-vinyl-btn">▶ Girar el vinilo</button></div>
+  <div class="lx-footnote" id="lx-vinyl-caption" style="text-align:center">Imagina que aquí suena nuestra canción favorita.</div>
+ </article>
+</div>
+<script>
+(()=> {
+ const $=(id)=>document.getElementById(id);
+ // 9. Cursor particles, kept lightweight and disabled for touch.
+ let last=0;
+ document.addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch'||Date.now()-last<45)return; last=Date.now();
+  const dot=document.createElement('i'); dot.textContent=Math.random()>.5?'✦':'·';
+  dot.style.cssText=`position:fixed;z-index:9998;pointer-events:none;left:${e.clientX}px;top:${e.clientY}px;color:${Math.random()>.5?'#d8b4fe':'#ff9ecb'};font-style:normal;font-size:${9+Math.random()*10}px;opacity:.9;transform:translate(-50%,-50%);transition:opacity .65s,transform .65s`;
+  document.body.appendChild(dot);requestAnimationFrame(()=>{dot.style.opacity='0';dot.style.transform='translate(-50%,-90%) scale(.4)'});
+  setTimeout(()=>dot.remove(),700);
+ },{passive:true});
+ // 14. Hug button
+ $('lx-hug-btn').addEventListener('click',()=>{
+  const h=$('lx-heart');h.classList.remove('bounce');void h.offsetWidth;h.classList.add('bounce');
+  $('lx-hug-text').textContent='Te mando un abrazo enorme, de esos que hacen sentir que todo estará bien. ❤️';
+ });
+ // 17. Scratch surface
+ const canvas=$('lx-scratch-canvas'), ctx=canvas.getContext('2d');let scratching=false;
+ function resetScratch(){
+  const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=Math.max(1,rect.width*dpr);canvas.height=Math.max(1,rect.height*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const g=ctx.createLinearGradient(0,0,rect.width,rect.height);g.addColorStop(0,'#b48aff');g.addColorStop(.5,'#7135a8');g.addColorStop(1,'#392050');
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,rect.width,rect.height);
+  ctx.fillStyle='rgba(255,255,255,.22)';ctx.font='bold 17px Arial';ctx.textAlign='center';ctx.fillText('RASCA AQUÍ ✨',rect.width/2,rect.height/2);
+ }
+ function scratch(e){if(!scratching)return;const r=canvas.getBoundingClientRect();ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(e.clientX-r.left,e.clientY-r.top,20,0,Math.PI*2);ctx.fill();}
+ canvas.addEventListener('pointerdown',e=>{scratching=true;canvas.setPointerCapture(e.pointerId);scratch(e)});
+ canvas.addEventListener('pointermove',scratch);canvas.addEventListener('pointerup',()=>scratching=false);canvas.addEventListener('pointercancel',()=>scratching=false);
+ $('lx-scratch-reset').addEventListener('click',resetScratch);window.addEventListener('resize',resetScratch);setTimeout(resetScratch,80);
+ // 19. Kiss counter persistence
+ const kissKey='loveflix-kiss-counter-v1';let kisses=0;try{kisses=Number(localStorage.getItem(kissKey)||0)||0}catch{}
+ function showKisses(){$('lx-kiss-count').textContent='💋 '+kisses.toLocaleString('es-MX')}
+ $('lx-kiss-btn').addEventListener('click',()=>{kisses++;try{localStorage.setItem(kissKey,kisses)}catch{}showKisses()});
+ $('lx-kiss-reset').addEventListener('click',()=>{kisses=0;try{localStorage.setItem(kissKey,'0')}catch{}showKisses()});showKisses();
+ // 20. Daily message rotates by date (stable all day)
+ const daily=['Hoy también te elegiría.','Mi parte favorita de la vida es compartirla contigo.','Que nunca nos falten razones para sonreír.','Eres un recuerdo bonito que sucede todos los días.','Contigo, hasta los días simples tienen magia.','Gracias por existir en mi universo.','Mi lugar favorito siempre será a tu lado.'];
+ const now=new Date(),day=Math.floor(Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())/86400000);
+ $('lx-surprise').textContent='✨ '+daily[((day%daily.length)+daily.length)%daily.length]+' ✨';
+ // 22. Mini movie scene navigator
+ const scenes=['Todo comenzó con una historia…<br>y todavía estamos escribiendo lo más bonito.','Cada recuerdo es una escena que guardaría para siempre.','No necesitamos una película perfecta; solo seguir juntos.','Y si volviera a empezar… volvería a elegirte. ❤️','Continuará… porque lo nuestro todavía tiene capítulos por vivir.'];
+ let scene=0;
+ $('lx-movie-next').addEventListener('click',()=>{const el=$('lx-movie-scene');el.classList.add('fade');setTimeout(()=>{scene=(scene+1)%scenes.length;el.innerHTML=scenes[scene];el.classList.remove('fade')},320)});
+ // 24. Vinyl animation
+ $('lx-vinyl-btn').addEventListener('click',()=>{const disk=$('lx-vinyl'),isPlaying=disk.classList.toggle('playing');$('lx-vinyl-btn').textContent=isPlaying?'❚❚ Detener giro':'▶ Girar el vinilo';$('lx-vinyl-caption').textContent=isPlaying?'El disco gira para acompañar este recuerdo.':'El vinilo está en pausa.'});
+})();
+</script>
+</section>
+<!-- FIN LOVEFLIX EXTRAS -->
 <footer id="creditos">
             <div class="footer-content">
                 <div class="footer-logo">LOVEFLIX</div>
@@ -6293,16 +6592,11 @@ Cumpliste todas las metas, y yo cumplí la mía: que supieras, con juegos y foto
 })();
 </script>
 
-<button id="auraFab" type="button" aria-label="Aura, asistente con IA"><span>✦</span><b>IA</b></button>
-<div id="aura-panel" role="dialog" aria-label="Aura, asistente con IA"><div class="ap-head"><strong>AURA · IA DEL UNIVERSO</strong><button class="ua-ib" id="ua-vo" type="button" aria-label="Voz de Aura">🔇</button><button class="ua-ib" id="ap-x" type="button" aria-label="Cerrar">×</button></div>
-<div id="ua-log" aria-live="polite"></div><div class="ua-chips" id="ua-chips"></div>
-<form id="ua-form" autocomplete="off"><button type="button" id="ua-mic" aria-label="Hablar">🎙️</button><input id="ua-in" placeholder="Escríbele a Aura…" maxlength="300"><button type="submit" aria-label="Enviar">➤</button></form></div>
-<div id="ua-trans" aria-hidden="true"><b></b><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i></div>
 <div id="ua-page" role="dialog" aria-label="Universo de tu amor">
   <canvas id="ua-cv"></canvas>
   <div class="ua-top"><button class="ua-ib" id="ua-back" type="button" aria-label="Volver">←</button><span class="ua-brand">LOVEFLIX</span><span style="width:44px"></span></div>
   <div id="ua-scroll">
-    <section class="ua-hero"><img id="ua-pic" alt="Mayra Joselyn" hidden><small>BIENVENIDA AL</small><h1 id="ua-h1" aria-label="Universo de tu amor"></h1><p>Mayra Joselyn, este universo entero late por ti ♥</p><button class="ua-btn" id="ua-talk" type="button">HABLA CON AURA ✦</button></section>
+    <section class="ua-hero"><img id="ua-pic" alt="Mayra Joselyn" hidden><small>BIENVENIDA AL</small><h1 id="ua-h1" aria-label="Universo de tu amor"></h1><p>Mayra Joselyn, este universo entero late por ti ♥</p></section>
     <section class="ua-sec" id="ua-portals"><h2>Elige un portal</h2><p>Cada uno te lleva a un rincón de nuestra página.</p><div id="ua-grid"></div></section>
       </div>
 </div>
@@ -10753,6 +11047,126 @@ sync();
 </script>
 
 
+
+
+<script id="loveflix-2-0-experience-js">
+(function(){
+  'use strict';
+  function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
+  ready(function(){
+    var audio=document.getElementById('localMusic');
+    var toggle=document.getElementById('lfxMusicToggle');
+    var state=document.getElementById('lfxMusicState');
+    var eq=document.getElementById('lfxEqualizer');
+    function updateMusic(){
+      if(!audio||!toggle||!state||!eq)return;
+      var playing=!audio.paused&&!audio.ended;
+      toggle.textContent=playing?'Ⅱ':'▶';
+      toggle.setAttribute('aria-label',playing?'Pausar música':'Reproducir música');
+      state.textContent=playing?'Reproduciendo':'Música en espera';
+      eq.classList.toggle('is-playing',playing);
+    }
+    if(audio){
+      ['play','playing','pause','ended','emptied','loadeddata'].forEach(function(ev){audio.addEventListener(ev,updateMusic)});
+      updateMusic();
+    }
+    if(toggle)toggle.addEventListener('click',function(){
+      if(!audio){state.textContent='No se encontró el reproductor principal';return;}
+      if(audio.paused){
+        var p=audio.play();
+        if(p&&typeof p.catch==='function')p.catch(function(){state.textContent='Toca el reproductor original para iniciar la música';});
+      }else audio.pause();
+      updateMusic();
+    });
+    var assistant=document.getElementById('lfxOpenAssistant');
+    if(assistant)assistant.addEventListener('click',function(){
+      var fab=document.getElementById('auraFab');
+      if(fab)fab.click();
+      else window.location.hash='inicio';
+    });
+    var chat=document.getElementById('lfxOpenChat');
+    if(chat)chat.addEventListener('click',function(){
+      var fab=document.getElementById('chatFab');
+      if(fab)fab.click();
+    });
+    var top=document.getElementById('lfxBackTop');
+    if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+    // Subtle pointer tilt only for the new experience cards; existing widgets keep their own motion.
+    var cards=document.querySelectorAll('.lfx-room-card');
+    var fine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+    if(fine){
+      cards.forEach(function(card){
+        card.addEventListener('pointermove',function(e){
+          var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+          card.style.transform='perspective(900px) rotateX('+((.5-y)*7)+'deg) rotateY('+((x-.5)*9)+'deg) translateY(-5px) translateZ(8px)';
+        });
+        card.addEventListener('pointerleave',function(){card.style.transform='';});
+      });
+    }
+    // Reveal only the new hub when it enters the viewport.
+    var room=document.getElementById('lfx-experience-room');
+    if(room&&'IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      room.style.opacity='0';room.style.transform='translateY(24px)';
+      room.style.transition='opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)';
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){if(entry.isIntersecting){room.style.opacity='1';room.style.transform='translateY(0)';io.disconnect();}});
+      },{threshold:.08});
+      io.observe(room);
+    }
+  });
+})();
+</script>
+
+
+<script id="lfx-lia-cinematic-js">
+(function(){
+'use strict';
+var letters=[
+{title:'Cuando necesites sentirte amada',body:'Amor, si algún día dudas de lo especial que eres, vuelve a leer estas palabras. Tu presencia importa, tu sonrisa ilumina mis días y mereces sentirte querida incluso en los momentos en que todo parece complicado. No tienes que ser perfecta ni tener siempre fuerzas. Para mí, también eres preciosa en tus días difíciles.'},
+{title:'En los días difíciles',body:'Si hoy el mundo pesa un poquito más, respira. No tienes que resolverlo todo ahora. Quiero que recuerdes que los momentos complicados no borran los recuerdos bonitos ni todo lo que todavía podemos construir. Que nunca nos falten la paciencia, la sinceridad y las ganas de escucharnos.'},
+{title:'Mi promesa para nosotros',body:'No te prometo una historia sin errores, porque somos humanos. Te prometo intentar hablar con honestidad, cuidar lo que sentimos, aprender de lo que nos duele y celebrar lo que nos hace felices. Quiero que nuestro amor se construya con hechos, respeto y pequeños detalles todos los días.'}
+];
+function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn,{once:true});else fn();}
+ready(function(){
+  var launch=document.getElementById('lfxLaunchLia');
+  if(launch)launch.addEventListener('click',function(){
+    /* Abrir de forma directa: no usar .click() sobre el FAB porque su
+       comportamiento es alternar abrir/cerrar y podía cerrar el panel. */
+    var panel=document.getElementById('aura-panel');
+    var fab=document.getElementById('auraFab');
+    document.body.classList.add('ua-open');
+    if(panel)panel.classList.add('open');
+    if(fab)fab.classList.add('on');
+    var title=document.querySelector('#aura-panel .ap-head strong');
+    if(title)title.textContent='LIA · ASISTENTE DEL UNIVERSO';
+    var input=document.getElementById('ua-in');
+    if(input){input.placeholder='Escríbele a Lia…';setTimeout(function(){input.focus();},150);}
+    var log=document.getElementById('ua-log');
+    if(log)log.scrollTop=log.scrollHeight;
+  });
+  var modal=document.getElementById('lfxLetterModal'),title=document.getElementById('lfxLetterTitle'),body=document.getElementById('lfxLetterBody');
+  document.querySelectorAll('.lfx-secret-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      var letter=letters[Number(card.getAttribute('data-letter'))];if(!letter)return;
+      title.textContent=letter.title;body.textContent=letter.body;modal.hidden=false;document.body.style.overflow='hidden';
+    });
+  });
+  function closeLetter(){if(modal){modal.hidden=true;document.body.style.overflow='';}}
+  if(modal)modal.querySelectorAll('[data-letter-close]').forEach(function(el){el.addEventListener('click',closeLetter);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal&&!modal.hidden)closeLetter();});
+  // Cinematic transitions between in-page destinations, without changing background artwork.
+  var overlay=document.getElementById('lfxCinemaTransition'),busy=false;
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||!overlay||busy)return;
+    var href=a.getAttribute('href');if(!href||href==='#'||!document.querySelector(href))return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();busy=true;overlay.classList.add('is-active');
+    window.setTimeout(function(){window.location.hash=href.slice(1);var target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'auto',block:'start'});},300);
+    window.setTimeout(function(){overlay.classList.remove('is-active');busy=false;},850);
+  });
+});
+})();
+</script>
 
 </body>
 </html>
